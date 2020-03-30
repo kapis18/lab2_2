@@ -32,12 +32,12 @@ class SimilarityFinderBehaviourTest {
         assertEquals(8, mock.getInvocationsCounter());
     }
 
-    @Test void testSeqLengthTwoAndFour_ExpectSixInvocations() {
+    @Test void testSeqLengthTwoAndFour_ExpectTwoInvocations() {
         finder.calculateJackardSimilarity(twoElemSeq, fourElemSeq);
         assertEquals(2, mock.getInvocationsCounter());
     }
 
-    @Test void testSeqLengthFourAndSix_ExpectTenInvocations() {
+    @Test void testSeqLengthFourAndSix_ExpectFourInvocations() {
         finder.calculateJackardSimilarity(fourElemSeq, sixElemSeq);
         assertEquals(4, mock.getInvocationsCounter());
     }
