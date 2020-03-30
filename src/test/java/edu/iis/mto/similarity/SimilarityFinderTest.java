@@ -20,26 +20,26 @@ class SimilarityFinderTest {
     }
 
     @Test void checkWhenBothSequencesEmpty() {
-        assertEquals(finder.calculateJackardSimilarity(emptySeq, emptySeq), 1.0d);
+        assertEquals(1.0d, finder.calculateJackardSimilarity(emptySeq, emptySeq));
     }
 
     @Test void checkWhenOneSequenceIsEmptyAndOneIsFilled() {
-        assertEquals(finder.calculateJackardSimilarity(eightElemSeq, emptySeq), 0.0d);
+        assertEquals(0.0d, finder.calculateJackardSimilarity(eightElemSeq, emptySeq));
     }
 
     @Test void checkWhenBothSequencesAreTheSame() {
-        assertEquals(finder.calculateJackardSimilarity(eightElemSeq, eightElemSeq), 1.0d);
+        assertEquals(1.0d, finder.calculateJackardSimilarity(eightElemSeq, eightElemSeq));
     }
 
     @Test void checkWhenBothSequencesAreDifferent_expected_0_25() {
-        assertEquals(finder.calculateJackardSimilarity(eightElemSeq, twoElemSeq), 0.25d);
+        assertEquals(0.25d, finder.calculateJackardSimilarity(eightElemSeq, twoElemSeq));
     }
 
     @Test void checkWhenBothSequencesAreDifferent_expected_0_5() {
-        assertEquals(finder.calculateJackardSimilarity(eightElemSeq, fourElemSeq), 0.5d);
+        assertEquals(0.5d, finder.calculateJackardSimilarity(eightElemSeq, fourElemSeq));
     }
 
     @Test void checkWhenBothSequencesAreDifferent_expected_0_75() {
-        assertEquals(finder.calculateJackardSimilarity(eightElemSeq, sixElemSeq), 0.75d);
+        assertEquals(0.75d, finder.calculateJackardSimilarity(eightElemSeq, sixElemSeq));
     }
 }
