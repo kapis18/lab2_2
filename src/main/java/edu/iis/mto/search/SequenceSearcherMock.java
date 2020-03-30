@@ -4,6 +4,8 @@ import java.util.stream.IntStream;
 
 public class SequenceSearcherMock implements SequenceSearcher {
 
+    private int numberOfInvocations = 0;
+
     @Override public SearchResult search(int elem, int[] seq) {
         SearchResult.Builder builder = SearchResult.builder();
         int index = IntStream.range(0, seq.length).filter(i -> seq[i] == elem).findFirst().orElse(-1);
@@ -13,6 +15,11 @@ public class SequenceSearcherMock implements SequenceSearcher {
             builder.withFound(false);
         }
         builder.withPosition(index);
+        numberOfInvocations += 1;
         return builder.build();
+    }
+
+    public int getNumberOfInvocations() {
+        return numberOfInvocations;
     }
 }
